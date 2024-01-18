@@ -1,6 +1,7 @@
 import { DashboardIcon } from '@/assets/icons/dashboardIcon'
 import { LocationPinIcon } from '@/assets/icons/locationPin'
 import Navbar from '@/sections/Navbar/Navbar'
+import OrderDetail from '@/sections/OrderDetail/OrderDetail'
 import Orders from '@/sections/Orders/Orders'
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
 					<Orders />
 				</div>
 				<div className="flex-3 w-full bg-black">
-
+					<OrderDetail />
 				</div>
 			</div>
 		</div>
