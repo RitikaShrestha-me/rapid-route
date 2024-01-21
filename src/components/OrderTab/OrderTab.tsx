@@ -3,12 +3,12 @@ import { WarningIcon } from '../../assets/icons/warning';
 import { BulletPointEllipseIcon } from '@/assets/icons/bulletPointEllipse';
 
 const OrderTab = (
-	{ packageId, type, status, pickup, destination, isSelected }:
+	{ packageId, type, status, rider, destination, isSelected }:
 		{
 			packageId: string,
 			type: string,
 			status: boolean,
-			pickup: string,
+			rider: any,
 			destination: string,
 			isSelected: boolean
 		}
@@ -16,13 +16,13 @@ const OrderTab = (
 	return (
 		<div className={isSelected ? "group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 bg-gray-50" : "group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"}>
 			<div className="flex-auto text-xs text-left text-[rgb(29,33,30)]">
-				<div className="flex">
+				<div className="flex gap-2">
 					<div className="w-full">
 						<p className={status ? "mt-1" : "mt-1 text-[#E02323]"}>Package ID: {packageId}</p>
 						<p className="mt-1 text-[#797979]">{type}</p>
 						<div className="mt-1 flex items-center gap-1">
 							<BulletPointCircleIcon />
-							<p className='whitespace-nowrap overflow-hidden text-ellipsis max-w-44'>{pickup}</p>
+							<p className='whitespace-nowrap overflow-hidden text-ellipsis max-w-44'>{rider[0]?.address1}</p>
 						</div>
 						<div className="mt-1 flex items-center gap-1">
 							<BulletPointEllipseIcon />

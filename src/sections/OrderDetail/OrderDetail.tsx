@@ -2,14 +2,11 @@
 
 import { CloseIcon } from '@/assets/icons/closeIcon';
 import OrderDescription from '@/components/OrderDescription/OrderDescription';
-import OrderTab from '@/components/OrderTab/OrderTab'
-import Search from '@/components/Search/Search'
 import { useOrdersContext } from '@/contexts/OrdersProvider'
-import { useEffect, useState } from 'react'
 
 const OrderDetail = () => {
-	const { selectedOrder, setSelectedOrder, allOrders, setDisplayModal, displayModal } = useOrdersContext();
-	const displayOrder = allOrders && allOrders[selectedOrder]
+	const { selectedOrder, allOrdersList, setDisplayModal, displayModal } = useOrdersContext();
+	const displayOrder = allOrdersList && allOrdersList[selectedOrder]
 
 	return (
 		<div className="w-full" style={{ height: 'calc(100vh - 48px - 62px)' }}>

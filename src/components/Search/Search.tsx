@@ -7,13 +7,13 @@ import { useState } from 'react';
 
 const Search = ({ setDisplayOrders }: { setDisplayOrders: (item: any) => void }) => {
 	const [searchItem, setSearchItem] = useState("")
-	const { allOrders } = useOrdersContext();
+	const { allOrdersList } = useOrdersContext();
 
 	const applySearch = (e: any) => {
 		e.preventDefault();
 
 		if (searchItem) {
-			let searchOutput = allOrders?.filter(ele => ele?.packageId?.includes(searchItem))
+			let searchOutput = allOrdersList?.filter(ele => ele?.order_number?.includes(searchItem))
 			if (searchItem && searchOutput) {
 				setDisplayOrders(searchOutput)
 				return
